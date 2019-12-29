@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+		"target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

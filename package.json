@@ -1,0 +1,42 @@
+{
+  "name": "trading-view-ind-ts",
+  "version": "1.0.0",
+  "description": "Trading View Technical Indicator Recommendations",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "npx mocha dist/tests",
+    "doc": "npx typedoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/edmundpf/trading-view-ind-ts.git"
+  },
+  "keywords": [
+    "trading",
+    "nyse",
+    "stocks",
+    "technical indicators",
+    "quant",
+    "finance"
+  ],
+  "author": "Edmund Pfeil <edmundpf@buffalo.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edmundpf/trading-view-ind-ts/issues"
+  },
+  "homepage": "https://github.com/edmundpf/trading-view-ind-ts#readme",
+  "devDependencies": {
+    "@types/chai": "*",
+    "@types/express": "^4.17.2",
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "chai": "*",
+    "mocha": "*",
+    "typedoc": "*",
+    "typedoc-plugin-markdown": "*"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1"
+  }
+}
