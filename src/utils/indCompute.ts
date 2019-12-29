@@ -10,7 +10,7 @@ function recommendation(val: number) {
 		: val > 0 && val < 0.5 ? 'Buy'
 		: val == 0 ? 'Neutral'
 		: val > -0.5 && val < 0 ? 'Sell'
-		: val >= -1 && val <= -0.5 ? 'Strong Sell'
+		: val <= -0.5 ? 'Strong Sell'
 		: 'Neutral'
 	)
 }
