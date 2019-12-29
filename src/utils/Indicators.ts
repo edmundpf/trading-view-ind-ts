@@ -20,16 +20,6 @@ export default class Indicators {
 	}
 
 	/**
-	 * Print Output
-	 */
-
-	private print(text: string) {
-		if (this.log) {
-			console.log(text)
-		}
-	}
-
-	/**
 	 * Initialize Session
 	 */
 
@@ -57,6 +47,16 @@ export default class Indicators {
 		const data = await this.getRawData(ticker, interval)
 		this.parseData(data)
 		this.logData()
+	}
+
+	/**
+	 * Print Output
+	 */
+
+	private print(text: string) {
+		if (this.log) {
+			console.log(text)
+		}
 	}
 
 	/**

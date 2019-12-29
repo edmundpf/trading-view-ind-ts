@@ -28,14 +28,6 @@ class Indicators {
         this.data = {};
     }
     /**
-     * Print Output
-     */
-    print(text) {
-        if (this.log) {
-            console.log(text);
-        }
-    }
-    /**
      * Initialize Session
      */
     initSession() {
@@ -60,6 +52,14 @@ class Indicators {
             this.parseData(data);
             this.logData();
         });
+    }
+    /**
+     * Print Output
+     */
+    print(text) {
+        if (this.log) {
+            console.log(text);
+        }
     }
     /**
      * Log Data
