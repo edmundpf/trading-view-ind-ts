@@ -14,6 +14,15 @@ const endpoints = {
 };
 exports.endpoints = endpoints;
 /**
+ * Signal Types
+ */
+const signal = {
+    'BUY': 1,
+    'NEUTRAL': 0,
+    'SELL': -1,
+};
+exports.signal = signal;
+/**
  * Scan Request Args
  */
 const scanRequestArgs = {
@@ -22,9 +31,10 @@ const scanRequestArgs = {
         query: {
             types: [],
         },
-        columns: [],
-    }
+    },
+    columns: [],
 };
+exports.scanRequestArgs = scanRequestArgs;
 /**
  * Intervals
  */

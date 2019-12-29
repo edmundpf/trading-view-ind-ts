@@ -13,33 +13,147 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const intervals = require('values').intervals;
+const scanValues_1 = require("./scanValues");
+const indCompute_1 = require("./indCompute");
 const values_1 = require("./values");
+var scanMetrics = require('./scanValues').scanMetrics;
+var scanRequestArgs = require('./values').scanRequestArgs;
 const session = axios_1.default.create();
 /**
  * Indicators Class
  */
 class Indicators {
-    constructor() {
-        this.initSession();
+    constructor(log) {
+        this.log = log == null ? true : log;
+        this.data = {};
+    }
+    /**
+     * Print Output
+     */
+    print(text) {
+        if (this.log) {
+            console.log(text);
+        }
     }
     /**
      * Initialize Session
      */
     initSession() {
         return __awaiter(this, void 0, void 0, function* () {
-            session.defaults.headers.common['User-Agent'] = values_1.currentUserAgent;
-            yield session.head(values_1.endpoints.home);
+            session.defaults.headers.common = Object.assign(Object.assign({}, session.defaults.headers.common), { 'User-Agent': values_1.currentUserAgent, 'Content-Type': 'application/json' });
+            try {
+                const res = yield session.head(values_1.endpoints.home);
+                this.print('Session initialized');
+                return true;
+            }
+            catch (error) {
+                return false;
+            }
         });
     }
     /**
-     * Get Results
+     * Get Data
      */
-    getResults(ticker, interval) {
-        if (!intervals.includes(interval)) {
-            throw new Error('Invalid interval');
+    getData(ticker, interval) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const data = yield this.getRawData(ticker, interval);
+            this.parseData(data);
+            this.logData();
+        });
+    }
+    /**
+     * Log Data
+     */
+    logData() {
+        if (this.log) {
+            const signalTypes = {
+                '-1': 'Sell',
+                '0': 'Neutral',
+                '1': 'Buy',
+            };
+            for (let ind in this.data) {
+                let val = this.data[ind];
+                if (val.value != val.rec) {
+                    console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`);
+                }
+                else {
+                    console.log(`${val.title}: ${val.value} | ${indCompute_1.recommendation(val.rec)}`);
+                }
+            }
         }
-        // await session.get()
+    }
+    /**
+     * Get Raw Data
+     */
+    getRawData(ticker, interval) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (!Object.keys(values_1.intervals).includes(interval)) {
+                throw new Error('Invalid interval');
+            }
+            var scanArgs = [];
+            for (let column of scanValues_1.scanColumns) {
+                scanArgs.push(`${column}|${values_1.intervals[interval]}`);
+            }
+            scanRequestArgs.symbols.tickers[0] = `AMEX:${ticker.toUpperCase()}`;
+            scanRequestArgs.columns = scanArgs;
+            try {
+                const res = yield axios_1.default.post(values_1.endpoints.scan, scanRequestArgs);
+                this.print(`Fetched ${interval} data for $${ticker}`);
+                return res.data.data[0].d;
+            }
+            catch (error) {
+                this.print(error);
+                return false;
+            }
+        });
+    }
+    /**
+     * Parse Data
+     */
+    parseData(data) {
+        var indVals = {};
+        for (let index in data) {
+            let value = data[index];
+            indVals[scanValues_1.scanColumns[index]] = value;
+        }
+        for (let ind in indVals) {
+            let value = indVals[ind];
+            let curInd = scanMetrics[ind];
+            let isArray = Array.isArray(curInd);
+            if (curInd === Object(curInd) && !isArray) {
+                curInd.values = [value];
+            }
+            else if (typeof (curInd) == 'string') {
+                let ascInd = scanMetrics[curInd];
+                ascInd.values.push(value);
+            }
+            else if (isArray) {
+                for (let asc of curInd) {
+                    let ascInd = scanMetrics[asc];
+                    ascInd.values.push(value);
+                }
+            }
+        }
+        for (let ind in scanMetrics) {
+            let curInd = scanMetrics[ind];
+            let isArray = Array.isArray(curInd);
+            if (curInd === Object(curInd) && !isArray) {
+                if (curInd.method == null) {
+                    this.data[ind] = {
+                        title: curInd.title,
+                        value: curInd.values[0],
+                        rec: curInd.values[0],
+                    };
+                }
+                else {
+                    this.data[ind] = {
+                        title: curInd.title,
+                        value: curInd.values[0],
+                        rec: curInd.method(...curInd.values)
+                    };
+                }
+            }
+        }
     }
 }
 exports.default = Indicators;

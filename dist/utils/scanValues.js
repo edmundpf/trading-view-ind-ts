@@ -1,8 +1,16 @@
 "use strict";
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const methods = __importStar(require("./indCompute"));
 /**
  * Scan Columns
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 const scanColumns = [
     'Recommend.Other',
     'Recommend.All',
@@ -16,9 +24,9 @@ const scanColumns = [
     'CCI20',
     'CCI20[1]',
     'ADX',
-    'ADX DI',
+    'ADX+DI',
     'ADX-DI',
-    'ADX DI[1]',
+    'ADX+DI[1]',
     'ADX-DI[1]',
     'AO',
     'AO[1]',
@@ -26,15 +34,14 @@ const scanColumns = [
     'Mom[1]',
     'MACD.macd',
     'MACD.signal',
-    'Rec.Stoch.RSI',
     'Stoch.RSI.K',
+    'Rec.Stoch.RSI',
     'W.R',
     'Rec.WR',
     'BBPower',
     'Rec.BBPower',
     'UO',
     'Rec.UO',
-    'close',
     'EMA5',
     'SMA5',
     'EMA10',
@@ -49,6 +56,7 @@ const scanColumns = [
     'SMA100',
     'EMA200',
     'SMA200',
+    'close',
     'Ichimoku.BLine',
     'Rec.Ichimoku',
     'VWMA',
@@ -60,217 +68,252 @@ exports.scanColumns = scanColumns;
 /**
  * Scan Metrics
  */
-const scanMetrics = [
-    {
-        name: 'Recommend.Other',
+var scanMetrics = {
+    'Recommend.Other': {
         title: 'Oscillators',
     },
-    {
-        name: 'Recommend.All',
+    'Recommend.All': {
         title: 'Summary',
     },
-    {
-        name: 'Recommend.MA',
+    'Recommend.MA': {
         title: 'Moving Averages',
     },
-    {
-        name: 'RSI',
+    'RSI': {
         title: 'Relative Strength Index (14)',
+        alts: [
+            'RSI[1]',
+        ],
+        method: methods.RSI,
     },
-    {
-        name: 'Stoch.K',
+    'RSI[1]': 'RSI',
+    'Stoch.K': {
         title: 'Stochastic %K (14, 3, 3)',
         alts: [
             'Stoch.D',
             'Stoch.K[1]',
             'Stoch.D[1]',
         ],
+        method: methods.stochastic,
     },
-    {
-        name: 'CCI20',
+    'Stoch.D': 'Stoch.K',
+    'Stoch.K[1]': 'Stoch.K',
+    'Stoch.D[1]': 'Stoch.K',
+    'CCI20': {
         title: 'Commodity Channel Index (20)',
         alts: [
             'CCI20[1]',
         ],
+        method: methods.commodityChannelIndex,
     },
-    {
-        name: 'ADX',
+    'CCI20[1]': 'CCI20',
+    'ADX': {
         title: 'Average Directional Index (14)',
         alts: [
-            'ADX DI',
+            'ADX+DI',
             'ADX-DI',
-            'ADX DI[1]',
+            'ADX+DI[1]',
             'ADX-DI[1]',
         ],
+        method: methods.averageDirectionalIndex,
     },
-    {
-        name: 'AO',
+    'ADX+DI': 'ADX',
+    'ADX-DI': 'ADX',
+    'ADX+DI[1]': 'ADX',
+    'ADX-DI[1]': 'ADX',
+    'AO': {
         title: 'Awesome Oscillator',
         alts: [
             'AO[1]'
         ],
+        method: methods.awesomeOscillator,
     },
-    {
-        name: 'Mom',
+    'AO[1]': 'AO',
+    'Mom': {
         title: 'Momentum (10)',
         alts: [
             'Mom[1]'
         ],
+        method: methods.momentum,
     },
-    {
-        name: 'MACD.macd',
+    'Mom[1]': 'Mom',
+    'MACD.macd': {
         title: 'MACD Level (12, 26)',
         alts: [
             'MACD.signal'
         ],
+        method: methods.MACD,
     },
-    {
-        name: 'Stoch.RSI.K',
+    'MACD.signal': 'MACD.macd',
+    'Stoch.RSI.K': {
         title: 'Stochastic RSI Fast (3, 3, 14, 14)',
         alts: [
             'Rec.Stoch.RSI'
         ],
+        method: methods.simpleSignal,
     },
-    {
-        name: 'W.R',
+    'Rec.Stoch.RSI': 'Stoch.RSI.K',
+    'W.R': {
         title: 'Williams Percent Range (14)',
         alts: [
             'Rec.WR'
         ],
+        method: methods.simpleSignal,
     },
-    {
-        name: 'BBPower',
+    'Rec.WR': 'W.R',
+    'BBPower': {
         title: 'Bull Bear Power',
         alts: [
             'Rec.BBPower'
         ],
+        method: methods.simpleSignal,
     },
-    {
-        name: 'UO',
+    'Rec.BBPower': 'BBPower',
+    'UO': {
         title: 'Ultimate Oscillator (7, 14, 28)',
         alts: [
             'Rec.UO'
         ],
+        method: methods.simpleSignal,
     },
-    {
-        name: 'EMA5',
+    'Rec.UO': 'UO',
+    'EMA5': {
         title: 'Exponential Moving Average (5)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA5',
+    'SMA5': {
         title: 'Simple Moving Average (5)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'EMA10',
+    'EMA10': {
         title: 'Exponential Moving Average (10)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA10',
+    'SMA10': {
         title: 'Simple Moving Average (10)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'EMA20',
+    'EMA20': {
         title: 'Exponential Moving Average (20)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA20',
+    'SMA20': {
         title: 'Simple Moving Average (20)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'EMA30',
+    'EMA30': {
         title: 'Exponential Moving Average (30)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA30',
+    'SMA30': {
         title: 'Simple Moving Average (30)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'EMA50',
+    'EMA50': {
         title: 'Exponential Moving Average (50)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA50',
+    'SMA50': {
         title: 'Simple Moving Average (50)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'EMA100',
+    'EMA100': {
         title: 'Exponential Moving Average (100)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA100',
+    'SMA100': {
         title: 'Simple Moving Average (100)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'EMA200',
+    'EMA200': {
         title: 'Exponential Moving Average (200)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'SMA200',
+    'SMA200': {
         title: 'Simple Moving Average (200)',
         alts: [
             'close'
         ],
+        method: methods.movingAverage,
     },
-    {
-        name: 'Ichimoku.BLine',
+    'close': [
+        'EMA5',
+        'SMA5',
+        'EMA10',
+        'SMA10',
+        'EMA20',
+        'SMA20',
+        'EMA30',
+        'SMA30',
+        'EMA50',
+        'SMA50',
+        'EMA100',
+        'SMA100',
+        'EMA200',
+        'SMA200',
+    ],
+    'Ichimoku.BLine': {
         title: 'Ichimoku Cloud Base Line (9, 26, 52, 26)',
         alts: [
             'Rec.Ichimoku'
         ],
+        method: methods.simpleSignal,
     },
-    {
-        name: 'VWMA',
+    'Rec.Ichimoku': 'Ichimoku.BLine',
+    'VWMA': {
         title: 'Volume Weighted Moving Average (20)',
         alts: [
             'Rec.VWMA'
         ],
+        method: methods.simpleSignal,
     },
-    {
-        name: 'HullMA9',
+    'Rec.VWMA': 'VWMA',
+    'HullMA9': {
         title: 'Hull Moving Average (9)',
         alts: [
             'Rec.HullMA9'
         ],
+        method: methods.simpleSignal,
     },
-];
+    'Rec.HullMA9': 'HullMA9',
+};
 exports.scanMetrics = scanMetrics;
 //# sourceMappingURL=scanValues.js.map

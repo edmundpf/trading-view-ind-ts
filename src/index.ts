@@ -1,3 +1,15 @@
 import Indicators from './utils/Indicators'
 
-const ind = new Indicators()
+/**
+ * Main Function
+ */
+
+async function main() {
+	const ind = new Indicators()
+	await ind.initSession()
+	await ind.getData('SPY', '15min')
+}
+
+// Run
+
+main()
