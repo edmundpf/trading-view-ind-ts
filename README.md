@@ -3,7 +3,15 @@
 
 ## Install
 ``` bash
-$ npm i git+ssh://git@github.com/edmundpf/trading-view-ind-ts.git
+$ npm i trading-view-ind-ts
+```
+
+## Usage
+``` javascript
+const Indicators = require('trading-view-ind-ts')
+const ind = new Indicators()
+await ind.initSession()
+await ind.getData('SPY', '15min')
 ```
 
 ## Documentation

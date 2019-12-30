@@ -5,11 +5,11 @@ const values_1 = require("./values");
  * Recommendation
  */
 function recommendation(val) {
-    return (val >= 0.5 ? 'Strong Buy'
-        : val > 0 && val < 0.5 ? 'Buy'
+    return (val > 0.5 ? 'Strong Buy'
+        : val > 0 && val <= 0.5 ? 'Buy'
             : val == 0 ? 'Neutral'
-                : val > -0.5 && val < 0 ? 'Sell'
-                    : val <= -0.5 ? 'Strong Sell'
+                : val >= -0.5 && val < 0 ? 'Sell'
+                    : val < -0.5 ? 'Strong Sell'
                         : 'Neutral');
 }
 exports.recommendation = recommendation;
@@ -61,7 +61,7 @@ exports.commodityChannelIndex = commodityChannelIndex;
  */
 function averageDirectionalIndex(val, comp1, comp2, comp3, comp4) {
     return (val > 20 && comp1 > comp2 && comp3 < comp4 ? values_1.signal.BUY
-        : val > 20 && comp2 < comp2 && comp3 > comp4 ? values_1.signal.SELL
+        : val > 20 && comp1 < comp2 && comp3 > comp4 ? values_1.signal.SELL
             : values_1.signal.NEUTRAL);
 }
 exports.averageDirectionalIndex = averageDirectionalIndex;

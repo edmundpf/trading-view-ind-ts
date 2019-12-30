@@ -15,7 +15,7 @@
 
 • **assert**: *AssertStatic* =  chai.assert
 
-*Defined in [tests/test.ts:4](https://github.com/edmundpf/trading-view-ind-ts/blob/8b7b7f3/src/tests/test.ts#L4)*
+*Defined in [tests/test.ts:4](https://github.com/edmundpf/trading-view-ind-ts/blob/610b569/src/tests/test.ts#L4)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **should**: *Should* =  chai.should()
 
-*Defined in [tests/test.ts:3](https://github.com/edmundpf/trading-view-ind-ts/blob/8b7b7f3/src/tests/test.ts#L3)*
+*Defined in [tests/test.ts:3](https://github.com/edmundpf/trading-view-ind-ts/blob/610b569/src/tests/test.ts#L3)*

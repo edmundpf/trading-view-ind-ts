@@ -6,11 +6,11 @@ import { signal } from './values'
 
 function recommendation(val: number) {
 	return (
-		val >= 0.5 ? 'Strong Buy'
-		: val > 0 && val < 0.5 ? 'Buy'
+		val > 0.5 ? 'Strong Buy'
+		: val > 0 && val <= 0.5 ? 'Buy'
 		: val == 0 ? 'Neutral'
-		: val > -0.5 && val < 0 ? 'Sell'
-		: val <= -0.5 ? 'Strong Sell'
+		: val >= -0.5 && val < 0 ? 'Sell'
+		: val < -0.5 ? 'Strong Sell'
 		: 'Neutral'
 	)
 }
@@ -78,7 +78,7 @@ function commodityChannelIndex(val: number, comp: number) {
 function averageDirectionalIndex(val: number, comp1: number, comp2: number, comp3: number, comp4: number) {
 	return (
 		val > 20 && comp1 > comp2 && comp3 < comp4 ? signal.BUY
-		: val > 20 && comp2 < comp2 && comp3 > comp4 ? signal.SELL
+		: val > 20 && comp1 < comp2 && comp3 > comp4 ? signal.SELL
 		: signal.NEUTRAL
 	)
 }
