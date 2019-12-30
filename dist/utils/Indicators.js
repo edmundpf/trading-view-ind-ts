@@ -157,4 +157,3 @@ class Indicators {
     }
 }
 exports.default = Indicators;
-//# sourceMappingURL=Indicators.js.map

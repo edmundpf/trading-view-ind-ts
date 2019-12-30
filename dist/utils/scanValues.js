@@ -227,4 +227,3 @@ var scanMetrics = {
     'Rec.HullMA9': 'HullMA9',
 };
 exports.scanMetrics = scanMetrics;
-//# sourceMappingURL=scanValues.js.map

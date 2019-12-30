@@ -49,4 +49,3 @@ const intervals = {
     'month': '1M',
 };
 exports.intervals = intervals;
-//# sourceMappingURL=values.js.map

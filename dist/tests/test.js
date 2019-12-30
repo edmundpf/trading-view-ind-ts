@@ -38,4 +38,3 @@ describe('Indicators', function () {
         });
     });
 });
-//# sourceMappingURL=test.js.map

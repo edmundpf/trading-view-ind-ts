@@ -92,4 +92,3 @@ function MACD(val, comp) {
             : values_1.signal.NEUTRAL);
 }
 exports.MACD = MACD;
-//# sourceMappingURL=indCompute.js.map
