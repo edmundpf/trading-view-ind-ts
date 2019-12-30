@@ -13,14 +13,14 @@
 
 ### `Const` assert
 
-• **assert**: *any* =  require('chai').assert
+• **assert**: *AssertStatic* =  chai.assert
 
-*Defined in [tests/test.ts:3](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/tests/test.ts#L3)*
+*Defined in [tests/test.ts:4](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/tests/test.ts#L4)*
 
 ___
 
 ### `Const` should
 
-• **should**: *any* =  require('chai').should()
+• **should**: *Should* =  chai.should()
 
-*Defined in [tests/test.ts:2](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/tests/test.ts#L2)*
+*Defined in [tests/test.ts:3](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/tests/test.ts#L3)*

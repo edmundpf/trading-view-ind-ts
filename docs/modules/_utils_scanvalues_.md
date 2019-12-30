@@ -70,7 +70,7 @@
 	'Rec.HullMA9',
 ]
 
-*Defined in [utils/scanValues.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L7)*
+*Defined in [utils/scanValues.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L7)*
 
 Scan Columns
 
@@ -80,7 +80,7 @@ Scan Columns
 
 ### ▪ **scanMetrics**: *object*
 
-*Defined in [utils/scanValues.ts:65](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L65)*
+*Defined in [utils/scanValues.ts:65](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L65)*
 
 Scan Metrics
 
@@ -88,115 +88,115 @@ Scan Metrics
 
 • **ADX+DI**: *string* = "ADX"
 
-*Defined in [utils/scanValues.ts:96](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L96)*
+*Defined in [utils/scanValues.ts:96](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L96)*
 
 ###  ADX+DI[1]
 
 • **ADX+DI[1]**: *string* = "ADX"
 
-*Defined in [utils/scanValues.ts:98](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L98)*
+*Defined in [utils/scanValues.ts:98](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L98)*
 
 ###  ADX-DI
 
 • **ADX-DI**: *string* = "ADX"
 
-*Defined in [utils/scanValues.ts:97](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L97)*
+*Defined in [utils/scanValues.ts:97](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L97)*
 
 ###  ADX-DI[1]
 
 • **ADX-DI[1]**: *string* = "ADX"
 
-*Defined in [utils/scanValues.ts:99](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L99)*
+*Defined in [utils/scanValues.ts:99](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L99)*
 
 ###  AO[1]
 
 • **AO[1]**: *string* = "AO"
 
-*Defined in [utils/scanValues.ts:104](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L104)*
+*Defined in [utils/scanValues.ts:104](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L104)*
 
 ###  CCI20[1]
 
 • **CCI20[1]**: *string* = "CCI20"
 
-*Defined in [utils/scanValues.ts:91](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L91)*
+*Defined in [utils/scanValues.ts:91](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L91)*
 
 ###  MACD.signal
 
 • **MACD.signal**: *string* = "MACD.macd"
 
-*Defined in [utils/scanValues.ts:114](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L114)*
+*Defined in [utils/scanValues.ts:114](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L114)*
 
 ###  Mom[1]
 
 • **Mom[1]**: *string* = "Mom"
 
-*Defined in [utils/scanValues.ts:109](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L109)*
+*Defined in [utils/scanValues.ts:109](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L109)*
 
 ###  RSI[1]
 
 • **RSI[1]**: *string* = "RSI"
 
-*Defined in [utils/scanValues.ts:79](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L79)*
+*Defined in [utils/scanValues.ts:79](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L79)*
 
 ###  Rec.BBPower
 
 • **Rec.BBPower**: *string* = "BBPower"
 
-*Defined in [utils/scanValues.ts:129](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L129)*
+*Defined in [utils/scanValues.ts:129](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L129)*
 
 ###  Rec.HullMA9
 
 • **Rec.HullMA9**: *string* = "HullMA9"
 
-*Defined in [utils/scanValues.ts:221](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L221)*
+*Defined in [utils/scanValues.ts:221](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L221)*
 
 ###  Rec.Ichimoku
 
 • **Rec.Ichimoku**: *string* = "Ichimoku.BLine"
 
-*Defined in [utils/scanValues.ts:211](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L211)*
+*Defined in [utils/scanValues.ts:211](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L211)*
 
 ###  Rec.Stoch.RSI
 
 • **Rec.Stoch.RSI**: *string* = "Stoch.RSI.K"
 
-*Defined in [utils/scanValues.ts:119](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L119)*
+*Defined in [utils/scanValues.ts:119](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L119)*
 
 ###  Rec.UO
 
 • **Rec.UO**: *string* = "UO"
 
-*Defined in [utils/scanValues.ts:134](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L134)*
+*Defined in [utils/scanValues.ts:134](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L134)*
 
 ###  Rec.VWMA
 
 • **Rec.VWMA**: *string* = "VWMA"
 
-*Defined in [utils/scanValues.ts:216](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L216)*
+*Defined in [utils/scanValues.ts:216](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L216)*
 
 ###  Rec.WR
 
 • **Rec.WR**: *string* = "W.R"
 
-*Defined in [utils/scanValues.ts:124](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L124)*
+*Defined in [utils/scanValues.ts:124](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L124)*
 
 ###  Stoch.D
 
 • **Stoch.D**: *string* = "Stoch.K"
 
-*Defined in [utils/scanValues.ts:84](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L84)*
+*Defined in [utils/scanValues.ts:84](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L84)*
 
 ###  Stoch.D[1]
 
 • **Stoch.D[1]**: *string* = "Stoch.K"
 
-*Defined in [utils/scanValues.ts:86](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L86)*
+*Defined in [utils/scanValues.ts:86](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L86)*
 
 ###  Stoch.K[1]
 
 • **Stoch.K[1]**: *string* = "Stoch.K"
 
-*Defined in [utils/scanValues.ts:85](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L85)*
+*Defined in [utils/scanValues.ts:85](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L85)*
 
 ###  close
 
@@ -217,11 +217,11 @@ Scan Metrics
 		'SMA200',
 	]
 
-*Defined in [utils/scanValues.ts:191](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L191)*
+*Defined in [utils/scanValues.ts:191](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L191)*
 
 ▪ **ADX**: *object*
 
-*Defined in [utils/scanValues.ts:92](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L92)*
+*Defined in [utils/scanValues.ts:92](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L92)*
 
 * **method**: *[averageDirectionalIndex](_utils_indcompute_.md#averagedirectionalindex)* =  methods.averageDirectionalIndex
 
@@ -229,7 +229,7 @@ Scan Metrics
 
 ▪ **AO**: *object*
 
-*Defined in [utils/scanValues.ts:100](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L100)*
+*Defined in [utils/scanValues.ts:100](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L100)*
 
 * **method**: *[awesomeOscillator](_utils_indcompute_.md#awesomeoscillator)* =  methods.awesomeOscillator
 
@@ -237,7 +237,7 @@ Scan Metrics
 
 ▪ **BBPower**: *object*
 
-*Defined in [utils/scanValues.ts:125](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L125)*
+*Defined in [utils/scanValues.ts:125](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L125)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
@@ -245,7 +245,7 @@ Scan Metrics
 
 ▪ **CCI20**: *object*
 
-*Defined in [utils/scanValues.ts:87](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L87)*
+*Defined in [utils/scanValues.ts:87](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L87)*
 
 * **method**: *[commodityChannelIndex](_utils_indcompute_.md#commoditychannelindex)* =  methods.commodityChannelIndex
 
@@ -253,7 +253,7 @@ Scan Metrics
 
 ▪ **EMA10**: *object*
 
-*Defined in [utils/scanValues.ts:143](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L143)*
+*Defined in [utils/scanValues.ts:143](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L143)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -261,7 +261,7 @@ Scan Metrics
 
 ▪ **EMA100**: *object*
 
-*Defined in [utils/scanValues.ts:175](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L175)*
+*Defined in [utils/scanValues.ts:175](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L175)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -269,7 +269,7 @@ Scan Metrics
 
 ▪ **EMA20**: *object*
 
-*Defined in [utils/scanValues.ts:151](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L151)*
+*Defined in [utils/scanValues.ts:151](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L151)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -277,7 +277,7 @@ Scan Metrics
 
 ▪ **EMA200**: *object*
 
-*Defined in [utils/scanValues.ts:183](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L183)*
+*Defined in [utils/scanValues.ts:183](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L183)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -285,7 +285,7 @@ Scan Metrics
 
 ▪ **EMA30**: *object*
 
-*Defined in [utils/scanValues.ts:159](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L159)*
+*Defined in [utils/scanValues.ts:159](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L159)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -293,7 +293,7 @@ Scan Metrics
 
 ▪ **EMA5**: *object*
 
-*Defined in [utils/scanValues.ts:135](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L135)*
+*Defined in [utils/scanValues.ts:135](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L135)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -301,7 +301,7 @@ Scan Metrics
 
 ▪ **EMA50**: *object*
 
-*Defined in [utils/scanValues.ts:167](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L167)*
+*Defined in [utils/scanValues.ts:167](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L167)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -309,7 +309,7 @@ Scan Metrics
 
 ▪ **HullMA9**: *object*
 
-*Defined in [utils/scanValues.ts:217](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L217)*
+*Defined in [utils/scanValues.ts:217](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L217)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
@@ -317,7 +317,7 @@ Scan Metrics
 
 ▪ **Ichimoku.BLine**: *object*
 
-*Defined in [utils/scanValues.ts:207](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L207)*
+*Defined in [utils/scanValues.ts:207](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L207)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
@@ -325,7 +325,7 @@ Scan Metrics
 
 ▪ **MACD.macd**: *object*
 
-*Defined in [utils/scanValues.ts:110](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L110)*
+*Defined in [utils/scanValues.ts:110](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L110)*
 
 * **method**: *[MACD](_utils_indcompute_.md#macd)* =  methods.MACD
 
@@ -333,7 +333,7 @@ Scan Metrics
 
 ▪ **Mom**: *object*
 
-*Defined in [utils/scanValues.ts:105](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L105)*
+*Defined in [utils/scanValues.ts:105](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L105)*
 
 * **method**: *[momentum](_utils_indcompute_.md#momentum)* =  methods.momentum
 
@@ -341,7 +341,7 @@ Scan Metrics
 
 ▪ **RSI**: *object*
 
-*Defined in [utils/scanValues.ts:75](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L75)*
+*Defined in [utils/scanValues.ts:75](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L75)*
 
 * **method**: *[RSI](_utils_indcompute_.md#rsi)* =  methods.RSI
 
@@ -349,25 +349,25 @@ Scan Metrics
 
 ▪ **Recommend.All**: *object*
 
-*Defined in [utils/scanValues.ts:69](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L69)*
+*Defined in [utils/scanValues.ts:69](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L69)*
 
 * **title**: *string* = "Summary"
 
 ▪ **Recommend.MA**: *object*
 
-*Defined in [utils/scanValues.ts:72](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L72)*
+*Defined in [utils/scanValues.ts:72](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L72)*
 
 * **title**: *string* = "Moving Averages"
 
 ▪ **Recommend.Other**: *object*
 
-*Defined in [utils/scanValues.ts:66](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L66)*
+*Defined in [utils/scanValues.ts:66](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L66)*
 
 * **title**: *string* = "Oscillators"
 
 ▪ **SMA10**: *object*
 
-*Defined in [utils/scanValues.ts:147](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L147)*
+*Defined in [utils/scanValues.ts:147](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L147)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -375,7 +375,7 @@ Scan Metrics
 
 ▪ **SMA100**: *object*
 
-*Defined in [utils/scanValues.ts:179](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L179)*
+*Defined in [utils/scanValues.ts:179](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L179)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -383,7 +383,7 @@ Scan Metrics
 
 ▪ **SMA20**: *object*
 
-*Defined in [utils/scanValues.ts:155](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L155)*
+*Defined in [utils/scanValues.ts:155](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L155)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -391,7 +391,7 @@ Scan Metrics
 
 ▪ **SMA200**: *object*
 
-*Defined in [utils/scanValues.ts:187](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L187)*
+*Defined in [utils/scanValues.ts:187](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L187)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -399,7 +399,7 @@ Scan Metrics
 
 ▪ **SMA30**: *object*
 
-*Defined in [utils/scanValues.ts:163](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L163)*
+*Defined in [utils/scanValues.ts:163](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L163)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -407,7 +407,7 @@ Scan Metrics
 
 ▪ **SMA5**: *object*
 
-*Defined in [utils/scanValues.ts:139](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L139)*
+*Defined in [utils/scanValues.ts:139](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L139)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -415,7 +415,7 @@ Scan Metrics
 
 ▪ **SMA50**: *object*
 
-*Defined in [utils/scanValues.ts:171](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L171)*
+*Defined in [utils/scanValues.ts:171](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L171)*
 
 * **method**: *[movingAverage](_utils_indcompute_.md#movingaverage)* =  methods.movingAverage
 
@@ -423,7 +423,7 @@ Scan Metrics
 
 ▪ **Stoch.K**: *object*
 
-*Defined in [utils/scanValues.ts:80](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L80)*
+*Defined in [utils/scanValues.ts:80](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L80)*
 
 * **method**: *[stochastic](_utils_indcompute_.md#stochastic)* =  methods.stochastic
 
@@ -431,7 +431,7 @@ Scan Metrics
 
 ▪ **Stoch.RSI.K**: *object*
 
-*Defined in [utils/scanValues.ts:115](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L115)*
+*Defined in [utils/scanValues.ts:115](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L115)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
@@ -439,7 +439,7 @@ Scan Metrics
 
 ▪ **UO**: *object*
 
-*Defined in [utils/scanValues.ts:130](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L130)*
+*Defined in [utils/scanValues.ts:130](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L130)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
@@ -447,7 +447,7 @@ Scan Metrics
 
 ▪ **VWMA**: *object*
 
-*Defined in [utils/scanValues.ts:212](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L212)*
+*Defined in [utils/scanValues.ts:212](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L212)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
@@ -455,7 +455,7 @@ Scan Metrics
 
 ▪ **W.R**: *object*
 
-*Defined in [utils/scanValues.ts:120](https://github.com/edmundpf/trading-view-ind-ts/blob/0cd3657/src/utils/scanValues.ts#L120)*
+*Defined in [utils/scanValues.ts:120](https://github.com/edmundpf/trading-view-ind-ts/blob/57bfebe/src/utils/scanValues.ts#L120)*
 
 * **method**: *[simpleSignal](_utils_indcompute_.md#simplesignal)* =  methods.simpleSignal
 
