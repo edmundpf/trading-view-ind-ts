@@ -1,4 +1,4 @@
-[trading-view-ind-ts - v1.0.2](../README.md) › [Globals](../globals.md) › ["utils/indCompute"](_utils_indcompute_.md)
+[trading-view-ind-ts - v1.0.3](../README.md) › [Globals](../globals.md) › ["utils/indCompute"](_utils_indcompute_.md)
 
 # External module: "utils/indCompute"
 
@@ -23,7 +23,7 @@
 
 ▸ **MACD**(`val`: number, `comp`: number): *any*
 
-*Defined in [utils/indCompute.ts:114](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L114)*
+*Defined in [utils/indCompute.ts:114](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L114)*
 
 MACD
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **RSI**(`val`: number, `comp`: number): *any*
 
-*Defined in [utils/indCompute.ts:42](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L42)*
+*Defined in [utils/indCompute.ts:42](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L42)*
 
 RSI
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **averageDirectionalIndex**(`val`: number, `comp1`: number, `comp2`: number, `comp3`: number, `comp4`: number): *any*
 
-*Defined in [utils/indCompute.ts:78](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L78)*
+*Defined in [utils/indCompute.ts:78](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L78)*
 
 Average Directional Index
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **awesomeOscillator**(`val`: number, `comp`: number): *any*
 
-*Defined in [utils/indCompute.ts:90](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L90)*
+*Defined in [utils/indCompute.ts:90](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L90)*
 
 Awesome Oscillator
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **commodityChannelIndex**(`val`: number, `comp`: number): *any*
 
-*Defined in [utils/indCompute.ts:66](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L66)*
+*Defined in [utils/indCompute.ts:66](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L66)*
 
 Commodity Channel Index
 
@@ -121,7 +121,7 @@ ___
 
 ▸ **momentum**(`val`: number, `comp`: number): *any*
 
-*Defined in [utils/indCompute.ts:102](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L102)*
+*Defined in [utils/indCompute.ts:102](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L102)*
 
 Momentum
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **movingAverage**(`val`: number, `comp`: number): *any*
 
-*Defined in [utils/indCompute.ts:30](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L30)*
+*Defined in [utils/indCompute.ts:30](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L30)*
 
 Moving Average
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **recommendation**(`val`: number): *"Strong Buy" | "Buy" | "Neutral" | "Sell" | "Strong Sell"*
 
-*Defined in [utils/indCompute.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L7)*
+*Defined in [utils/indCompute.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L7)*
 
 Recommendation
 
@@ -177,7 +177,7 @@ ___
 
 ▸ **simpleSignal**(`val`: number, `comp`: number): *number*
 
-*Defined in [utils/indCompute.ts:22](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L22)*
+*Defined in [utils/indCompute.ts:22](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L22)*
 
 Simple Signal
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **stochastic**(`val`: number, `comp1`: number, `comp2`: number, `comp3`: number): *any*
 
-*Defined in [utils/indCompute.ts:54](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/indCompute.ts#L54)*
+*Defined in [utils/indCompute.ts:54](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/indCompute.ts#L54)*
 
 Stochastic
 

@@ -45,9 +45,10 @@ class Indicators {
     /**
      * Get Data
      */
-    getData(ticker, interval) {
+    getData(args) {
         return __awaiter(this, void 0, void 0, function* () {
-            const data = yield this.getRawData(ticker, interval);
+            args = Object.assign({ exchange: 'NYSE' }, args);
+            const data = yield this.getRawData(args);
             const indData = this.parseData(data);
             this.logData(indData);
             return indData;
@@ -85,20 +86,21 @@ class Indicators {
     /**
      * Get Raw Data
      */
-    getRawData(ticker, interval) {
+    getRawData(args) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
-            if (!Object.keys(values_1.intervals).includes(interval)) {
+            if (!Object.keys(values_1.intervals).includes(args.interval)) {
                 throw new Error('Invalid interval');
             }
             var scanArgs = [];
             for (let column of scanValues_1.scanColumns) {
-                scanArgs.push(`${column}|${values_1.intervals[interval]}`);
+                scanArgs.push(`${column}|${values_1.intervals[args.interval]}`);
             }
-            scanRequestArgs.symbols.tickers[0] = `AMEX:${ticker.toUpperCase()}`;
+            scanRequestArgs.symbols.tickers[0] = `${(_a = args.exchange) === null || _a === void 0 ? void 0 : _a.toUpperCase()}:${args.ticker.toUpperCase()}`;
             scanRequestArgs.columns = scanArgs;
             try {
                 const res = yield axios_1.default.post(values_1.endpoints.scan, scanRequestArgs);
-                this.print(`Fetched ${interval} data for $${ticker}`);
+                this.print(`Fetched ${args.interval} data for $${args.ticker}`);
                 return res.data.data[0].d;
             }
             catch (error) {

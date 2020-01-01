@@ -1,6 +1,6 @@
-[trading-view-ind-ts - v1.0.2](README.md) › [Globals](globals.md)
+[trading-view-ind-ts - v1.0.3](README.md) › [Globals](globals.md)
 
-# trading-view-ind-ts - v1.0.2
+# trading-view-ind-ts - v1.0.3
 
 ## Index
 
@@ -11,4 +11,5 @@
 * ["utils/Indicators"](modules/_utils_indicators_.md)
 * ["utils/indCompute"](modules/_utils_indcompute_.md)
 * ["utils/scanValues"](modules/_utils_scanvalues_.md)
+* ["utils/types"](modules/_utils_types_.md)
 * ["utils/values"](modules/_utils_values_.md)

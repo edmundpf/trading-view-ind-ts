@@ -14,7 +14,11 @@ describe('Indicators', function() {
 		this.timeout(15000)
 		ind = new Indicators()
 		await ind.initSession()
-		indData = await ind.getData('SPY', '15min')
+		indData = await ind.getData({
+			ticker: 'SPY',
+			exchange: 'AMEX',
+			interval: '15min'
+		})
   })
 	it('Is function', function() {
 		Indicators.should.be.a('function')

@@ -1,3 +1,4 @@
+import { DataArgs } from './types';
 /**
  * Indicators Class
  */
@@ -11,7 +12,7 @@ export default class Indicators {
     /**
      * Get Data
      */
-    getData(ticker: string, interval: string): Promise<any>;
+    getData(args: DataArgs): Promise<any>;
     /**
      * Print Output
      */

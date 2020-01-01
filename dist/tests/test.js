@@ -27,7 +27,11 @@ describe('Indicators', function () {
             this.timeout(15000);
             ind = new __1.default();
             yield ind.initSession();
-            indData = yield ind.getData('SPY', '15min');
+            indData = yield ind.getData({
+                ticker: 'SPY',
+                exchange: 'AMEX',
+                interval: '15min'
+            });
         });
     });
     it('Is function', function () {

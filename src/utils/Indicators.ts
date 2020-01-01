@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { scanColumns } from './scanValues'
 import { recommendation } from './indCompute'
+import { DataArgs } from './types'
 import { intervals, endpoints, currentUserAgent } from './values'
 var scanMetrics = require('./scanValues').scanMetrics
 var scanRequestArgs = require('./values').scanRequestArgs
@@ -41,8 +42,12 @@ export default class Indicators {
 	 * Get Data
 	 */
 
-	async getData(ticker: string, interval: string) {
-		const data = await this.getRawData(ticker, interval)
+	async getData(args: DataArgs) {
+		args = {
+			exchange: 'NYSE',
+			...args
+		}
+		const data = await this.getRawData(args)
 		const indData = this.parseData(data)
 		this.logData(indData)
 		return indData
@@ -85,22 +90,22 @@ export default class Indicators {
 	 * Get Raw Data
 	 */
 
-	private async getRawData(ticker: string, interval: string) {
-		if (!Object.keys(intervals).includes(interval)) {
+	private async getRawData(args: DataArgs) {
+		if (!Object.keys(intervals).includes(args.interval)) {
 			throw new Error('Invalid interval')
 		}
 		var scanArgs: Array<string> = []
 		for (let column of scanColumns) {
-			scanArgs.push(`${column}|${intervals[interval]}`)
+			scanArgs.push(`${column}|${intervals[args.interval]}`)
 		}
-		scanRequestArgs.symbols.tickers[0] = `AMEX:${ticker.toUpperCase()}`
+		scanRequestArgs.symbols.tickers[0] = `${args.exchange?.toUpperCase()}:${args.ticker.toUpperCase()}`
 		scanRequestArgs.columns = scanArgs
 		try {
 			const res = await axios.post(
 				endpoints.scan,
 				scanRequestArgs,
 			)
-			this.print(`Fetched ${interval} data for $${ticker}`)
+			this.print(`Fetched ${args.interval} data for $${args.ticker}`)
 			return res.data.data[0].d
 		}
 		catch (error) {

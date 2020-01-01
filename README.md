@@ -13,7 +13,11 @@ $ npm i trading-view-ind-ts
 const Indicators = require('trading-view-ind-ts')
 const ind = new Indicators()
 await ind.initSession()
-const indData = await ind.getData('SPY', '15min')
+const indData = await ind.getData({
+	ticker: 'SPY',
+	exchange: 'AMEX',
+	interval: '15min'
+})
 ```
 
 ## Documentation

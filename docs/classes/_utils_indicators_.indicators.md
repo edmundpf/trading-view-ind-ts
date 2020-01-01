@@ -1,4 +1,4 @@
-[trading-view-ind-ts - v1.0.2](../README.md) › [Globals](../globals.md) › ["utils/Indicators"](../modules/_utils_indicators_.md) › [Indicators](_utils_indicators_.indicators.md)
+[trading-view-ind-ts - v1.0.3](../README.md) › [Globals](../globals.md) › ["utils/Indicators"](../modules/_utils_indicators_.md) › [Indicators](_utils_indicators_.indicators.md)
 
 # Class: Indicators
 
@@ -33,7 +33,7 @@ Indicators Class
 
 \+ **new Indicators**(`log?`: undefined | false | true): *[Indicators](_utils_indicators_.indicators.md)*
 
-*Defined in [utils/Indicators.ts:15](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L15)*
+*Defined in [utils/Indicators.ts:16](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L16)*
 
 **Parameters:**
 
@@ -49,15 +49,15 @@ Name | Type |
 
 • **log**: *boolean*
 
-*Defined in [utils/Indicators.ts:15](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L15)*
+*Defined in [utils/Indicators.ts:16](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L16)*
 
 ## Methods
 
 ###  getData
 
-▸ **getData**(`ticker`: string, `interval`: string): *Promise‹any›*
+▸ **getData**(`args`: [DataArgs](../interfaces/_utils_types_.dataargs.md)): *Promise‹any›*
 
-*Defined in [utils/Indicators.ts:44](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L44)*
+*Defined in [utils/Indicators.ts:45](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L45)*
 
 Get Data
 
@@ -65,8 +65,7 @@ Get Data
 
 Name | Type |
 ------ | ------ |
-`ticker` | string |
-`interval` | string |
+`args` | [DataArgs](../interfaces/_utils_types_.dataargs.md) |
 
 **Returns:** *Promise‹any›*
 
@@ -74,9 +73,9 @@ ___
 
 ### `Private` getRawData
 
-▸ **getRawData**(`ticker`: string, `interval`: string): *Promise‹any›*
+▸ **getRawData**(`args`: [DataArgs](../interfaces/_utils_types_.dataargs.md)): *Promise‹any›*
 
-*Defined in [utils/Indicators.ts:88](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L88)*
+*Defined in [utils/Indicators.ts:93](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L93)*
 
 Get Raw Data
 
@@ -84,8 +83,7 @@ Get Raw Data
 
 Name | Type |
 ------ | ------ |
-`ticker` | string |
-`interval` | string |
+`args` | [DataArgs](../interfaces/_utils_types_.dataargs.md) |
 
 **Returns:** *Promise‹any›*
 
@@ -95,7 +93,7 @@ ___
 
 ▸ **initSession**(): *Promise‹boolean›*
 
-*Defined in [utils/Indicators.ts:24](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L24)*
+*Defined in [utils/Indicators.ts:25](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L25)*
 
 Initialize Session
 
@@ -107,7 +105,7 @@ ___
 
 ▸ **logData**(`data`: any): *void*
 
-*Defined in [utils/Indicators.ts:65](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L65)*
+*Defined in [utils/Indicators.ts:70](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L70)*
 
 Log Data
 
@@ -125,7 +123,7 @@ ___
 
 ▸ **parseData**(`data`: Array‹number›): *any*
 
-*Defined in [utils/Indicators.ts:116](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L116)*
+*Defined in [utils/Indicators.ts:121](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L121)*
 
 Parse Data
 
@@ -143,7 +141,7 @@ ___
 
 ▸ **print**(`text`: string): *void*
 
-*Defined in [utils/Indicators.ts:55](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L55)*
+*Defined in [utils/Indicators.ts:60](https://github.com/edmundpf/trading-view-ind-ts/blob/0e4ec01/src/utils/Indicators.ts#L60)*
 
 Print Output
 
