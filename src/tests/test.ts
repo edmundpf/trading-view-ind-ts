@@ -9,16 +9,17 @@ const assert = chai.assert
 
 describe('Indicators', function() {
 	var ind: any = null
+	var indData: any = null
 	before(async function() {
 		this.timeout(15000)
 		ind = new Indicators()
 		await ind.initSession()
-		await ind.getData('SPY', '15min')
+		indData = await ind.getData('SPY', '15min')
   })
 	it('Is function', function() {
 		Indicators.should.be.a('function')
 	})
 	it('Returns recommendations', async function() {
-		assert.equal(ind.data.RSI != null, true)
+		assert.equal(indData.RSI != null, true)
 	})
 })

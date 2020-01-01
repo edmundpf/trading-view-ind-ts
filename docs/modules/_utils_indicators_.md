@@ -1,4 +1,4 @@
-[trading-view-ind-ts - v1.0.1](../README.md) › [Globals](../globals.md) › ["utils/Indicators"](_utils_indicators_.md)
+[trading-view-ind-ts - v1.0.2](../README.md) › [Globals](../globals.md) › ["utils/Indicators"](_utils_indicators_.md)
 
 # External module: "utils/Indicators"
 
@@ -20,7 +20,7 @@
 
 • **scanMetrics**: *any* =  require('./scanValues').scanMetrics
 
-*Defined in [utils/Indicators.ts:5](https://github.com/edmundpf/trading-view-ind-ts/blob/27250b4/src/utils/Indicators.ts#L5)*
+*Defined in [utils/Indicators.ts:5](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L5)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **scanRequestArgs**: *any* =  require('./values').scanRequestArgs
 
-*Defined in [utils/Indicators.ts:6](https://github.com/edmundpf/trading-view-ind-ts/blob/27250b4/src/utils/Indicators.ts#L6)*
+*Defined in [utils/Indicators.ts:6](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L6)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **session**: *AxiosInstance* =  axios.create()
 
-*Defined in [utils/Indicators.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/27250b4/src/utils/Indicators.ts#L7)*
+*Defined in [utils/Indicators.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/0c8d8f2/src/utils/Indicators.ts#L7)*

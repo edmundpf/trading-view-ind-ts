@@ -25,7 +25,6 @@ const session = axios_1.default.create();
 class Indicators {
     constructor(log) {
         this.log = log == null ? true : log;
-        this.data = {};
     }
     /**
      * Initialize Session
@@ -49,8 +48,9 @@ class Indicators {
     getData(ticker, interval) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield this.getRawData(ticker, interval);
-            this.parseData(data);
-            this.logData();
+            const indData = this.parseData(data);
+            this.logData(indData);
+            return indData;
         });
     }
     /**
@@ -64,15 +64,15 @@ class Indicators {
     /**
      * Log Data
      */
-    logData() {
+    logData(data) {
         if (this.log) {
             const signalTypes = {
                 '-1': 'Sell',
                 '0': 'Neutral',
                 '1': 'Buy',
             };
-            for (let ind in this.data) {
-                let val = this.data[ind];
+            for (let ind in data) {
+                let val = data[ind];
                 if (val.value != val.rec) {
                     console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`);
                 }
@@ -112,6 +112,7 @@ class Indicators {
      */
     parseData(data) {
         var indVals = {};
+        const indData = {};
         for (let index in data) {
             let value = data[index];
             indVals[scanValues_1.scanColumns[index]] = value;
@@ -139,14 +140,14 @@ class Indicators {
             let isArray = Array.isArray(curInd);
             if (curInd === Object(curInd) && !isArray) {
                 if (curInd.method == null) {
-                    this.data[ind] = {
+                    indData[ind] = {
                         title: curInd.title,
                         value: curInd.values[0],
                         rec: curInd.values[0],
                     };
                 }
                 else {
-                    this.data[ind] = {
+                    indData[ind] = {
                         title: curInd.title,
                         value: curInd.values[0],
                         rec: curInd.method(...curInd.values)
@@ -154,6 +155,7 @@ class Indicators {
                 }
             }
         }
+        return indData;
     }
 }
 exports.default = Indicators;

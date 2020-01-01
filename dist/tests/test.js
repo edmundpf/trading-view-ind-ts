@@ -21,12 +21,13 @@ const assert = chai_1.default.assert;
  */
 describe('Indicators', function () {
     var ind = null;
+    var indData = null;
     before(function () {
         return __awaiter(this, void 0, void 0, function* () {
             this.timeout(15000);
             ind = new __1.default();
             yield ind.initSession();
-            yield ind.getData('SPY', '15min');
+            indData = yield ind.getData('SPY', '15min');
         });
     });
     it('Is function', function () {
@@ -34,7 +35,7 @@ describe('Indicators', function () {
     });
     it('Returns recommendations', function () {
         return __awaiter(this, void 0, void 0, function* () {
-            assert.equal(ind.data.RSI != null, true);
+            assert.equal(indData.RSI != null, true);
         });
     });
 });

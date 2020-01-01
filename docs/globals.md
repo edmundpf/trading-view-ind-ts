@@ -1,6 +1,6 @@
-[trading-view-ind-ts - v1.0.1](README.md) › [Globals](globals.md)
+[trading-view-ind-ts - v1.0.2](README.md) › [Globals](globals.md)
 
-# trading-view-ind-ts - v1.0.1
+# trading-view-ind-ts - v1.0.2
 
 ## Index
 

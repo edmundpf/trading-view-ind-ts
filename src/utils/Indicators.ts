@@ -13,10 +13,8 @@ const session = axios.create()
 export default class Indicators {
 
 	log: boolean
-	data: any
 	constructor(log?: boolean) {
 		this.log = log == null ? true : log
-		this.data = {}
 	}
 
 	/**
@@ -45,8 +43,9 @@ export default class Indicators {
 
 	async getData(ticker: string, interval: string) {
 		const data = await this.getRawData(ticker, interval)
-		this.parseData(data)
-		this.logData()
+		const indData = this.parseData(data)
+		this.logData(indData)
+		return indData
 	}
 
 	/**
@@ -63,15 +62,15 @@ export default class Indicators {
 	 * Log Data
 	 */
 
-	private logData() {
+	private logData(data: any) {
 		if (this.log) {
 			const signalTypes: any = {
 				'-1': 'Sell',
 				'0': 'Neutral',
 				'1': 'Buy',
 			}
-			for (let ind in this.data) {
-				let val = this.data[ind]
+			for (let ind in data) {
+				let val = data[ind]
 				if (val.value != val.rec) {
 					console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`)
 				}
@@ -116,6 +115,7 @@ export default class Indicators {
 
 	private parseData(data: Array<number>) {
 		var indVals: any = {}
+		const indData: any = {}
 		for (let index in data) {
 			let value = data[index]
 			indVals[scanColumns[index]] = value
@@ -143,14 +143,14 @@ export default class Indicators {
 			let isArray = Array.isArray(curInd)
 			if (curInd === Object(curInd) && !isArray) {
 				if (curInd.method == null) {
-					this.data[ind] = {
+					indData[ind] = {
 						title: curInd.title,
 						value: curInd.values[0],
 						rec: curInd.values[0],
 					}
 				}
 				else {
-					this.data[ind] = {
+					indData[ind] = {
 						title: curInd.title,
 						value: curInd.values[0],
 						rec: curInd.method(...curInd.values)
@@ -158,5 +158,7 @@ export default class Indicators {
 				}
 			}
 		}
+		return indData
 	}
+
 }

@@ -3,7 +3,6 @@
  */
 export default class Indicators {
     log: boolean;
-    data: any;
     constructor(log?: boolean);
     /**
      * Initialize Session
@@ -12,7 +11,7 @@ export default class Indicators {
     /**
      * Get Data
      */
-    getData(ticker: string, interval: string): Promise<void>;
+    getData(ticker: string, interval: string): Promise<any>;
     /**
      * Print Output
      */
