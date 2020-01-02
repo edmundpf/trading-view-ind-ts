@@ -49,7 +49,7 @@ class Indicators {
         return __awaiter(this, void 0, void 0, function* () {
             args = Object.assign({ exchange: 'NYSE' }, args);
             const data = yield this.getRawData(args);
-            const indData = this.parseData(data);
+            const indData = this.parseData(args.ticker, data);
             this.logData(indData);
             return indData;
         });
@@ -74,11 +74,16 @@ class Indicators {
             };
             for (let ind in data) {
                 let val = data[ind];
-                if (val.value != val.rec) {
-                    console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`);
+                if (ind != 'ticker') {
+                    if (val.value != val.rec) {
+                        console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`);
+                    }
+                    else {
+                        console.log(`${val.title}: ${val.value} | ${indCompute_1.recommendation(val.rec)}`);
+                    }
                 }
                 else {
-                    console.log(`${val.title}: ${val.value} | ${indCompute_1.recommendation(val.rec)}`);
+                    console.log(`Ticker: ${val}`);
                 }
             }
         }
@@ -112,7 +117,7 @@ class Indicators {
     /**
      * Parse Data
      */
-    parseData(data) {
+    parseData(ticker, data) {
         var indVals = {};
         const indData = {};
         for (let index in data) {
@@ -157,6 +162,7 @@ class Indicators {
                 }
             }
         }
+        indData.ticker = ticker;
         return indData;
     }
 }

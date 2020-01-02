@@ -48,7 +48,10 @@ export default class Indicators {
 			...args
 		}
 		const data = await this.getRawData(args)
-		const indData = this.parseData(data)
+		const indData = this.parseData(
+			args.ticker,
+			data
+		)
 		this.logData(indData)
 		return indData
 	}
@@ -76,11 +79,16 @@ export default class Indicators {
 			}
 			for (let ind in data) {
 				let val = data[ind]
-				if (val.value != val.rec) {
-					console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`)
+				if (ind != 'ticker') {
+					if (val.value != val.rec) {
+						console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`)
+					}
+					else {
+						console.log(`${val.title}: ${val.value} | ${recommendation(val.rec)}`)
+					}
 				}
 				else {
-					console.log(`${val.title}: ${val.value} | ${recommendation(val.rec)}`)
+					console.log(`Ticker: ${val}`)
 				}
 			}
 		}
@@ -118,7 +126,7 @@ export default class Indicators {
 	 * Parse Data
 	 */
 
-	private parseData(data: Array<number>) {
+	private parseData(ticker:string, data: Array<number>) {
 		var indVals: any = {}
 		const indData: any = {}
 		for (let index in data) {
@@ -163,6 +171,7 @@ export default class Indicators {
 				}
 			}
 		}
+		indData.ticker = ticker
 		return indData
 	}
 
