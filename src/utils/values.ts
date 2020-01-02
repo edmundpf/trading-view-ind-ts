@@ -9,7 +9,6 @@ const currentUserAgent: string = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl
  */
 
 const endpoints: any = {
-	home: 'https://www.tradingview.com',
 	scan: 'https://scanner.tradingview.com/america/scan',
 }
 

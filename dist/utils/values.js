@@ -9,7 +9,6 @@ exports.currentUserAgent = currentUserAgent;
  * Endpoints
  */
 const endpoints = {
-    home: 'https://www.tradingview.com',
     scan: 'https://scanner.tradingview.com/america/scan',
 };
 exports.endpoints = endpoints;

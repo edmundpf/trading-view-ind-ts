@@ -26,7 +26,6 @@ describe('Indicators', function () {
         return __awaiter(this, void 0, void 0, function* () {
             this.timeout(15000);
             ind = new __1.default();
-            yield ind.initSession();
             indData = yield ind.getData({
                 ticker: 'SPY',
                 exchange: 'AMEX',

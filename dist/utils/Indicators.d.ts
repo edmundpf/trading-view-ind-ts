@@ -8,7 +8,7 @@ export default class Indicators {
     /**
      * Initialize Session
      */
-    initSession(): Promise<boolean>;
+    initSession(): boolean;
     /**
      * Get Data
      */

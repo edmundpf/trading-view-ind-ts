@@ -25,22 +25,14 @@ const session = axios_1.default.create();
 class Indicators {
     constructor(log) {
         this.log = log == null ? true : log;
+        this.initSession();
     }
     /**
      * Initialize Session
      */
     initSession() {
-        return __awaiter(this, void 0, void 0, function* () {
-            session.defaults.headers.common = Object.assign(Object.assign({}, session.defaults.headers.common), { 'User-Agent': values_1.currentUserAgent, 'Content-Type': 'application/json' });
-            try {
-                const res = yield session.head(values_1.endpoints.home);
-                this.print('Session initialized');
-                return true;
-            }
-            catch (error) {
-                return false;
-            }
-        });
+        session.defaults.headers.common = Object.assign(Object.assign({}, session.defaults.headers.common), { 'User-Agent': values_1.currentUserAgent, 'Content-Type': 'application/json' });
+        return true;
     }
     /**
      * Get Data
@@ -98,13 +90,14 @@ class Indicators {
                 throw new Error('Invalid interval');
             }
             var scanArgs = [];
+            var reqArgs = JSON.parse(JSON.stringify(scanRequestArgs));
             for (let column of scanValues_1.scanColumns) {
                 scanArgs.push(`${column}|${values_1.intervals[args.interval]}`);
             }
-            scanRequestArgs.symbols.tickers[0] = `${(_a = args.exchange) === null || _a === void 0 ? void 0 : _a.toUpperCase()}:${args.ticker.toUpperCase()}`;
-            scanRequestArgs.columns = scanArgs;
+            reqArgs.symbols.tickers[0] = `${(_a = args.exchange) === null || _a === void 0 ? void 0 : _a.toUpperCase()}:${args.ticker.toUpperCase()}`;
+            reqArgs.columns = scanArgs;
             try {
-                const res = yield axios_1.default.post(values_1.endpoints.scan, scanRequestArgs);
+                const res = yield session.post(values_1.endpoints.scan, reqArgs);
                 this.print(`Fetched ${args.interval} data for $${args.ticker}`);
                 return res.data.data[0].d;
             }

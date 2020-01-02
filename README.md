@@ -12,7 +12,6 @@ $ npm i trading-view-ind-ts
 ``` javascript
 const Indicators = require('trading-view-ind-ts')
 const ind = new Indicators()
-await ind.initSession()
 const indData = await ind.getData({
 	ticker: 'SPY',
 	exchange: 'AMEX',

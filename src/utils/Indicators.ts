@@ -16,26 +16,20 @@ export default class Indicators {
 	log: boolean
 	constructor(log?: boolean) {
 		this.log = log == null ? true : log
+		this.initSession()
 	}
 
 	/**
 	 * Initialize Session
 	 */
 
-	async initSession() {
+	initSession() {
 		session.defaults.headers.common = {
 			...session.defaults.headers.common,
 			'User-Agent': currentUserAgent,
 			'Content-Type': 'application/json',
 		}
-		try {
-			const res = await session.head(endpoints.home)
-			this.print('Session initialized')
-			return true
-		}
-		catch (error) {
-			return false
-		}
+		return true
 	}
 
 	/**
@@ -103,15 +97,16 @@ export default class Indicators {
 			throw new Error('Invalid interval')
 		}
 		var scanArgs: Array<string> = []
+		var reqArgs: any = JSON.parse(JSON.stringify(scanRequestArgs))
 		for (let column of scanColumns) {
 			scanArgs.push(`${column}|${intervals[args.interval]}`)
 		}
-		scanRequestArgs.symbols.tickers[0] = `${args.exchange?.toUpperCase()}:${args.ticker.toUpperCase()}`
-		scanRequestArgs.columns = scanArgs
+		reqArgs.symbols.tickers[0] = `${args.exchange?.toUpperCase()}:${args.ticker.toUpperCase()}`
+		reqArgs.columns = scanArgs
 		try {
-			const res = await axios.post(
+			const res = await session.post(
 				endpoints.scan,
-				scanRequestArgs,
+				reqArgs,
 			)
 			this.print(`Fetched ${args.interval} data for $${args.ticker}`)
 			return res.data.data[0].d

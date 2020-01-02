@@ -13,7 +13,6 @@ describe('Indicators', function() {
 	before(async function() {
 		this.timeout(15000)
 		ind = new Indicators()
-		await ind.initSession()
 		indData = await ind.getData({
 			ticker: 'SPY',
 			exchange: 'AMEX',
