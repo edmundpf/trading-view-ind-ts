@@ -1,6 +1,6 @@
 {
   "name": "trading-view-ind-ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Trading View Technical Indicator Recommendations",
 	"main": "./dist/index.js",
 	"files": [
