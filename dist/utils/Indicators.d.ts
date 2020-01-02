@@ -18,6 +18,10 @@ export default class Indicators {
      */
     private print;
     /**
+     * Title Case
+     */
+    private titleCase;
+    /**
      * Log Data
      */
     private logData;

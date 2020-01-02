@@ -1,4 +1,4 @@
-[trading-view-ind-ts - v1.0.5](../README.md) › [Globals](../globals.md) › ["utils/types"](_utils_types_.md)
+[trading-view-ind-ts - v1.0.6](../README.md) › [Globals](../globals.md) › ["utils/types"](_utils_types_.md)
 
 # External module: "utils/types"
 

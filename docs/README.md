@@ -1,6 +1,6 @@
-[trading-view-ind-ts - v1.0.5](README.md) › [Globals](globals.md)
+[trading-view-ind-ts - v1.0.6](README.md) › [Globals](globals.md)
 
-# trading-view-ind-ts - v1.0.5
+# trading-view-ind-ts - v1.0.6
 
 # trading-view-ind-ts
 [![Build Status](https://travis-ci.org/edmundpf/trading-view-ind-ts.svg?branch=master)](https://travis-ci.org/edmundpf/trading-view-ind-ts)

@@ -19,6 +19,7 @@ const values_1 = require("./values");
 var scanMetrics = require('./scanValues').scanMetrics;
 var scanRequestArgs = require('./values').scanRequestArgs;
 const session = axios_1.default.create();
+const scanKeys = Object.keys(scanValues_1.scanColumns);
 /**
  * Indicators Class
  */
@@ -55,6 +56,12 @@ class Indicators {
         }
     }
     /**
+     * Title Case
+     */
+    titleCase(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+    /**
      * Log Data
      */
     logData(data) {
@@ -66,7 +73,7 @@ class Indicators {
             };
             for (let ind in data) {
                 let val = data[ind];
-                if (ind != 'ticker') {
+                if (val === Object(val)) {
                     if (val.value != val.rec) {
                         console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`);
                     }
@@ -75,7 +82,7 @@ class Indicators {
                     }
                 }
                 else {
-                    console.log(`Ticker: ${val}`);
+                    console.log(`${this.titleCase(ind)}: ${val}`);
                 }
             }
         }
@@ -91,7 +98,7 @@ class Indicators {
             }
             var scanArgs = [];
             var reqArgs = JSON.parse(JSON.stringify(scanRequestArgs));
-            for (let column of scanValues_1.scanColumns) {
+            for (let column of scanKeys) {
                 scanArgs.push(`${column}|${values_1.intervals[args.interval]}`);
             }
             reqArgs.symbols.tickers[0] = `${(_a = args.exchange) === null || _a === void 0 ? void 0 : _a.toUpperCase()}:${args.ticker.toUpperCase()}`;
@@ -111,11 +118,12 @@ class Indicators {
      * Parse Data
      */
     parseData(ticker, data) {
+        var close = 0;
         var indVals = {};
         const indData = {};
         for (let index in data) {
             let value = data[index];
-            indVals[scanValues_1.scanColumns[index]] = value;
+            indVals[scanKeys[index]] = value;
         }
         for (let ind in indVals) {
             let value = indVals[ind];
@@ -132,6 +140,9 @@ class Indicators {
                 for (let asc of curInd) {
                     let ascInd = scanMetrics[asc];
                     ascInd.values.push(value);
+                    if (ind == 'close') {
+                        close = value;
+                    }
                 }
             }
         }
@@ -139,15 +150,16 @@ class Indicators {
             let curInd = scanMetrics[ind];
             let isArray = Array.isArray(curInd);
             if (curInd === Object(curInd) && !isArray) {
+                let indKey = scanValues_1.scanColumns[ind] == null ? ind : scanValues_1.scanColumns[ind];
                 if (curInd.method == null) {
-                    indData[ind] = {
+                    indData[indKey] = {
                         title: curInd.title,
                         value: curInd.values[0],
                         rec: curInd.values[0],
                     };
                 }
                 else {
-                    indData[ind] = {
+                    indData[indKey] = {
                         title: curInd.title,
                         value: curInd.values[0],
                         rec: curInd.method(...curInd.values)
@@ -156,6 +168,7 @@ class Indicators {
             }
         }
         indData.ticker = ticker;
+        indData.close = close;
         return indData;
     }
 }

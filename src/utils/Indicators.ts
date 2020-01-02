@@ -6,6 +6,7 @@ import { intervals, endpoints, currentUserAgent } from './values'
 var scanMetrics = require('./scanValues').scanMetrics
 var scanRequestArgs = require('./values').scanRequestArgs
 const session = axios.create()
+const scanKeys = Object.keys(scanColumns)
 
 /**
  * Indicators Class
@@ -61,6 +62,14 @@ export default class Indicators {
 	}
 
 	/**
+	 * Title Case
+	 */
+
+	private titleCase(text: string) {
+		return text.charAt(0).toUpperCase() + text.slice(1)
+	}
+
+	/**
 	 * Log Data
 	 */
 
@@ -73,7 +82,7 @@ export default class Indicators {
 			}
 			for (let ind in data) {
 				let val = data[ind]
-				if (ind != 'ticker') {
+				if (val === Object(val)) {
 					if (val.value != val.rec) {
 						console.log(`${val.title}: ${val.value} | ${signalTypes[String(val.rec)]}`)
 					}
@@ -82,7 +91,7 @@ export default class Indicators {
 					}
 				}
 				else {
-					console.log(`Ticker: ${val}`)
+					console.log(`${this.titleCase(ind)}: ${val}`)
 				}
 			}
 		}
@@ -98,7 +107,7 @@ export default class Indicators {
 		}
 		var scanArgs: Array<string> = []
 		var reqArgs: any = JSON.parse(JSON.stringify(scanRequestArgs))
-		for (let column of scanColumns) {
+		for (let column of scanKeys) {
 			scanArgs.push(`${column}|${intervals[args.interval]}`)
 		}
 		reqArgs.symbols.tickers[0] = `${args.exchange?.toUpperCase()}:${args.ticker.toUpperCase()}`
@@ -122,11 +131,12 @@ export default class Indicators {
 	 */
 
 	private parseData(ticker:string, data: Array<number>) {
+		var close: number = 0
 		var indVals: any = {}
 		const indData: any = {}
 		for (let index in data) {
 			let value = data[index]
-			indVals[scanColumns[index]] = value
+			indVals[scanKeys[index]] = value
 		}
 		for (let ind in indVals) {
 			let value = indVals[ind]
@@ -143,6 +153,9 @@ export default class Indicators {
 				for (let asc of curInd) {
 					let ascInd = scanMetrics[asc]
 					ascInd.values.push(value)
+					if (ind == 'close') {
+						close = value
+					}
 				}
 			}
 		}
@@ -150,15 +163,16 @@ export default class Indicators {
 			let curInd = scanMetrics[ind]
 			let isArray = Array.isArray(curInd)
 			if (curInd === Object(curInd) && !isArray) {
+				let indKey = scanColumns[ind] == null ? ind : scanColumns[ind]
 				if (curInd.method == null) {
-					indData[ind] = {
+					indData[indKey] = {
 						title: curInd.title,
 						value: curInd.values[0],
 						rec: curInd.values[0],
 					}
 				}
 				else {
-					indData[ind] = {
+					indData[indKey] = {
 						title: curInd.title,
 						value: curInd.values[0],
 						rec: curInd.method(...curInd.values)
@@ -167,6 +181,7 @@ export default class Indicators {
 			}
 		}
 		indData.ticker = ticker
+		indData.close = close
 		return indData
 	}
 

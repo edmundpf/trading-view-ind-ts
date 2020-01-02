@@ -1,4 +1,4 @@
-[trading-view-ind-ts - v1.0.5](../README.md) › [Globals](../globals.md) › ["utils/Indicators"](_utils_indicators_.md)
+[trading-view-ind-ts - v1.0.6](../README.md) › [Globals](../globals.md) › ["utils/Indicators"](_utils_indicators_.md)
 
 # External module: "utils/Indicators"
 
@@ -10,17 +10,26 @@
 
 ### Variables
 
+* [scanKeys](_utils_indicators_.md#const-scankeys)
 * [scanMetrics](_utils_indicators_.md#scanmetrics)
 * [scanRequestArgs](_utils_indicators_.md#scanrequestargs)
 * [session](_utils_indicators_.md#const-session)
 
 ## Variables
 
+### `Const` scanKeys
+
+• **scanKeys**: *string[]* =  Object.keys(scanColumns)
+
+*Defined in [utils/Indicators.ts:9](https://github.com/edmundpf/trading-view-ind-ts/blob/8d62b33/src/utils/Indicators.ts#L9)*
+
+___
+
 ###  scanMetrics
 
 • **scanMetrics**: *any* =  require('./scanValues').scanMetrics
 
-*Defined in [utils/Indicators.ts:6](https://github.com/edmundpf/trading-view-ind-ts/blob/a1d250a/src/utils/Indicators.ts#L6)*
+*Defined in [utils/Indicators.ts:6](https://github.com/edmundpf/trading-view-ind-ts/blob/8d62b33/src/utils/Indicators.ts#L6)*
 
 ___
 
@@ -28,7 +37,7 @@ ___
 
 • **scanRequestArgs**: *any* =  require('./values').scanRequestArgs
 
-*Defined in [utils/Indicators.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/a1d250a/src/utils/Indicators.ts#L7)*
+*Defined in [utils/Indicators.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/8d62b33/src/utils/Indicators.ts#L7)*
 
 ___
 
@@ -36,4 +45,4 @@ ___
 
 • **session**: *AxiosInstance* =  axios.create()
 
-*Defined in [utils/Indicators.ts:8](https://github.com/edmundpf/trading-view-ind-ts/blob/a1d250a/src/utils/Indicators.ts#L8)*
+*Defined in [utils/Indicators.ts:8](https://github.com/edmundpf/trading-view-ind-ts/blob/8d62b33/src/utils/Indicators.ts#L8)*
