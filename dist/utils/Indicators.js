@@ -165,6 +165,9 @@ class Indicators {
                         rec: curInd.method(...curInd.values)
                     };
                 }
+                if (indData[indKey].value == null) {
+                    indData[indKey].rec = null;
+                }
             }
         }
         indData.ticker = ticker;
