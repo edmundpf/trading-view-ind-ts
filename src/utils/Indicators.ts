@@ -108,7 +108,7 @@ export default class Indicators {
 		var scanArgs: Array<string> = []
 		var reqArgs: any = JSON.parse(JSON.stringify(scanRequestArgs))
 		for (let column of scanKeys) {
-			scanArgs.push(`${column}|${intervals[args.interval]}`)
+			scanArgs.push(`${column}${args.interval != 'day' ? '|' : ''}${intervals[args.interval]}`)
 		}
 		reqArgs.symbols.tickers[0] = `${args.exchange?.toUpperCase()}:${args.ticker.toUpperCase()}`
 		reqArgs.columns = scanArgs

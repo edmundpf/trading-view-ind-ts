@@ -99,7 +99,7 @@ class Indicators {
             var scanArgs = [];
             var reqArgs = JSON.parse(JSON.stringify(scanRequestArgs));
             for (let column of scanKeys) {
-                scanArgs.push(`${column}|${values_1.intervals[args.interval]}`);
+                scanArgs.push(`${column}${args.interval != 'day' ? '|' : ''}${values_1.intervals[args.interval]}`);
             }
             reqArgs.symbols.tickers[0] = `${(_a = args.exchange) === null || _a === void 0 ? void 0 : _a.toUpperCase()}:${args.ticker.toUpperCase()}`;
             reqArgs.columns = scanArgs;
