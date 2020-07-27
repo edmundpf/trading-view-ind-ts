@@ -1,6 +1,6 @@
-[trading-view-ind-ts - v1.0.8](README.md) › [Globals](globals.md)
+[trading-view-ind-ts - v1.0.9](README.md) › [Globals](globals.md)
 
-# trading-view-ind-ts - v1.0.8
+# trading-view-ind-ts - v1.0.9
 
 # trading-view-ind-ts
 [![Build Status](https://travis-ci.org/edmundpf/trading-view-ind-ts.svg?branch=master)](https://travis-ci.org/edmundpf/trading-view-ind-ts)
@@ -14,7 +14,7 @@ $ npm i trading-view-ind-ts
 
 ## Usage
 ``` javascript
-const Indicators = require('trading-view-ind-ts')
+const Indicators = require('trading-view-ind-ts').default
 const ind = new Indicators()
 const indData = await ind.getData({
 	ticker: 'SPY',

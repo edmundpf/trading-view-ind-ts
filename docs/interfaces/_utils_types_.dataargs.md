@@ -1,4 +1,4 @@
-[trading-view-ind-ts - v1.0.8](../README.md) › [Globals](../globals.md) › ["utils/types"](../modules/_utils_types_.md) › [DataArgs](_utils_types_.dataargs.md)
+[trading-view-ind-ts - v1.0.9](../README.md) › [Globals](../globals.md) › ["utils/types"](../modules/_utils_types_.md) › [DataArgs](_utils_types_.dataargs.md)
 
 # Interface: DataArgs
 
@@ -28,7 +28,7 @@ Data Args
 
 • **exchange**? : *undefined | string*
 
-*Defined in [utils/types.ts:9](https://github.com/edmundpf/trading-view-ind-ts/blob/a532de6/src/utils/types.ts#L9)*
+*Defined in [utils/types.ts:9](https://github.com/edmundpf/trading-view-ind-ts/blob/8240bc4/src/utils/types.ts#L9)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **interval**: *string*
 
-*Defined in [utils/types.ts:8](https://github.com/edmundpf/trading-view-ind-ts/blob/a532de6/src/utils/types.ts#L8)*
+*Defined in [utils/types.ts:8](https://github.com/edmundpf/trading-view-ind-ts/blob/8240bc4/src/utils/types.ts#L8)*
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 • **ticker**: *string*
 
-*Defined in [utils/types.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/a532de6/src/utils/types.ts#L7)*
+*Defined in [utils/types.ts:7](https://github.com/edmundpf/trading-view-ind-ts/blob/8240bc4/src/utils/types.ts#L7)*
