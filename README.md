@@ -10,7 +10,7 @@ $ npm i trading-view-ind-ts
 
 ## Usage
 ``` javascript
-const Indicators = require('trading-view-ind-ts')
+const Indicators = require('trading-view-ind-ts').default
 const ind = new Indicators()
 const indData = await ind.getData({
 	ticker: 'SPY',
