@@ -1,11 +1,11 @@
 {
   "name": "trading-view-ind-ts",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Trading View Technical Indicator Recommendations",
-	"main": "./dist/index.js",
-	"files": [
-		"/dist"
-	],
+  "main": "./dist/index.js",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "npx mocha dist/tests",
     "doc": "npx typedoc"
